@@ -13,6 +13,8 @@ defmodule Flightex.Bookings.Agent do
     {:ok, uuid}
   end
 
+  def list_all, do: Agent.get(__MODULE__, & &1)
+
   def get(uuid), do: Agent.get(__MODULE__, &get_booking(&1, uuid))
 
   defp get_booking(state, uuid) do
