@@ -13,6 +13,8 @@ defmodule Flightex.Bookings.CreateOrUpdate do
     |> save_booking()
   end
 
+  def call(_), do: {:error, "invalid params"}
+
   defp save_booking({:ok, %Booking{} = booking}), do: BookingAgent.save(booking)
-  defp save_booking({:error, _reason} = error), do: error
+  defp save_booking(_), do: "error on saving"
 end

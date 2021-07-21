@@ -13,4 +13,6 @@ defmodule Flightex.Bookings.Booking do
        complete_date: complete_date
      }}
   end
+
+  def build(_), do: "error on build"
 end

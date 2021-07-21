@@ -18,7 +18,7 @@ defmodule Flightex.Users.CreateOrUpdateTest do
         cpf: "12345678900"
       }
 
-      CreateOrUpdate.call(params)
+      Flightex.create_or_update_user(params)
 
       {_ok, response} = Agent.get(params.cpf)
 
